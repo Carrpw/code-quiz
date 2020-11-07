@@ -145,4 +145,35 @@ function finished() {
     questions.appendChild(area);
     
 
- 
+  //Puts initials & score in local storage
+  submit.addEventListener("click", function () {
+    var initials = input.value;
+
+    if (initials === null) {
+        console.log("No initials");
+    } 
+      
+    else {
+        var finalScore = {
+            initials: initials,
+            score: timeRemaining
+        }
+
+        console.log(finalScore);
+        var scores = localStorage.getItem("scores");
+
+        if (scores == null) {
+            scores = [];
+        } 
+
+        else {
+            scores = JSON.parse(scores);
+        }
+
+        scores.push(finalScore);
+        var newScore = JSON.stringify(scores);
+        localStorage.setItem("scores", newScore);
+        window.location.replace("highScores.html");
+    }
+  });
+}
