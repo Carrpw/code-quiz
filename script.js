@@ -9,3 +9,20 @@ var wrapper = document.querySelector("#wrapper");
 var ul = document.createElement("ul");
 
 
+//Timer
+timer.addEventListener("click", function () {
+  if (pause === 0) {
+      pause = setInterval(function () {
+        secondsLeft--;
+        currentTime.textContent = "Time left: " + secondsLeft;   
+      }, 1000);
+
+      if (secondsLeft <= 0) {
+        clearInterval(pause);
+        finished();
+        currentTime.textContent = "Out of time!";
+    }
+  }
+  displayQuestion(questionIndex);
+});
+
