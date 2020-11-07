@@ -12,3 +12,8 @@ for (var i = 0; i < scores.length; i++) {
     createLi.textContent = scores[i].initials + " " + scores[i].score;
     highScore.appendChild(createLi);
 }
+
+var startOver = document.querySelector("#startOver");
+startOver.addEventListener("click", function() {
+    window.location.replace("index.html");
+});
