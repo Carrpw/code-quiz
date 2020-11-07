@@ -45,3 +45,36 @@ function displayQuestion(questionIndex) {
   })
 }
 
+//Questions, answers, and answer array
+var questionsArray = [
+    {
+        question: "What is JavaScript",
+        choices: ["coffee", "a potentially brutal programming language", "religious text", "a type of paper"],
+        answer: "a potentially brutal programming language"
+    },
+
+    {
+        question: "Variables in JavaScript can contain what?",
+        choices: ["string only", "nothing", "numbers only", "all of the above"],
+        answer: "all of the above"
+    },
+
+    {
+        question: "HTML is the ______ of a webpage.",
+        choices: ["skin", "hair", "muscles", "skeleton"],
+        answer: "skeleton"
+    },
+
+    {
+        question: "What HTML tag do you put JavaScript in?",
+        choices: ["<head>", "<body>", "<script>", "<link>"],
+        answer: "<script>"
+    },
+    
+    {
+        question: "What do you put before a comment in JavaScript?",
+        choices: ["'", "//", "<!--", "/*"],
+        answer: "//"
+    },
+];
+
