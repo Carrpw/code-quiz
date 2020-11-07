@@ -26,3 +26,22 @@ timer.addEventListener("click", function () {
   displayQuestion(questionIndex);
 });
 
+//Displays the question and answer choices
+function displayQuestion(questionIndex) {
+  questions.innerHTML = "";
+  ul.innerHTML = "";
+
+  for (var i = 0; i < questionsArray.length; i++) {
+    var userQuestion = questionsArray[questionIndex].question;
+    var userChoices = questionsArray[questionIndex].choices;
+    questions.textContent = userQuestion;
+  }
+  userChoices.forEach(function (nextOptions) {
+    var answerOptions = document.createElement("li");
+    answerOptions.textContent = nextOptions;
+    questions.appendChild(ul);
+    ul.appendChild(answerOptions);
+    answerOptions.addEventListener("click", (evaluateAnswer));
+  })
+}
+
