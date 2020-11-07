@@ -78,3 +78,71 @@ var questionsArray = [
     },
 ];
 
+//Function compares choices with answer
+function evaluateAnswer(event) {
+  var selection = event.target;
+
+  if (selection.matches("li")) {
+    var createDiv = document.createElement("div");
+    createDiv.setAttribute("id", "createDiv");
+      
+    if (selection.textContent == questionsArray[questionIndex].answer) {
+        createDiv.textContent = "Correct!";
+    } 
+    else {
+        secondsLeft = secondsLeft -= 10;
+        createDiv.textContent = "Wrong!";
+    }
+  }
+
+  questionIndex++;
+
+  if (questionIndex >= questionsArray.length) {
+    finished();
+  } 
+  else {
+    displayQuestion(questionIndex);
+  }
+  questions.appendChild(createDiv);
+
+}
+
+//Final input submission area upon completion of quiz
+function finished() {
+    questions.innerHTML = "";
+    currentTime.innerHTML = "";
+
+    var heading1 = document.createElement("h1");
+    heading1.setAttribute("id", "heading1");
+    heading1.textContent = "Finished or Not!"
+    questions.appendChild(heading1);
+
+    var value = document.createElement("value");
+    value.setAttribute("id", "value");
+    value.textContent = "Enter your initials: ";
+    questions.appendChild(value);
+
+    var input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("id", "initials");
+    input.textContent = "";
+    questions.appendChild(input);
+
+    var submit = document.createElement("button");
+    submit.setAttribute("type", "submit");
+    submit.setAttribute("id", "Submit");
+    submit.textContent = "Submit";
+    questions.appendChild(submit);
+
+    var timeRemaining = secondsLeft;
+    var define = document.createElement("define");
+    clearInterval(pause);
+    define.textContent = "Score: " + timeRemaining;
+    questions.appendChild(define);
+
+    var area = document.createElement("area");
+    area.setAttribute("id", "area");
+    questions.appendChild(area);
+    
+
+ 
