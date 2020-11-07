@@ -1,3 +1,22 @@
+#wrapper {
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  width: 1200px;
+}
+
 h1 {
-    
+  text-align: center;
+}
+
+#questions {
+  margin: 20px;
+}
+
+li {
+  background-color: black;
+  color: white;
+  margin-top: 10px;
+  width: 25%;
+  padding: 20px 20px;
 }
